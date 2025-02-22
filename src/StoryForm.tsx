@@ -60,7 +60,7 @@ const StoryForm: React.FC = () => {
   const handleCharacterChange = (index: number, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     const newCharacters = [...formData.characters];
-    newCharacters[index][name] = value;
+    (newCharacters[index] as any)[name] = value;
     setFormData({
       ...formData,
       characters: newCharacters
